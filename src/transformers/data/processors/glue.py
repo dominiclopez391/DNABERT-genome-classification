@@ -168,9 +168,11 @@ def glue_convert_examples_to_features(
 
 class DnaPromProcessor(DataProcessor):
     """Processor for the DNA promoter data"""
-
+    """Modified for multi-class classification"""
     def get_labels(self):
-        return ["0", "1"] 
+        return list(range(26))
+        """[0, 1, 2... 25] for each different class"""
+
 
     def get_train_examples(self, data_dir):
         logger.info("LOOKING AT {}".format(os.path.join(data_dir, "train.tsv")))
@@ -607,6 +609,7 @@ glue_tasks_num_labels = {
     "dna690":2,
     "dnapair":2,
     "dnasplice":3,
+    "genome-classification":26,
 }
 
 glue_processors = {
@@ -624,6 +627,7 @@ glue_processors = {
     "dna690": DnaPromProcessor,
     "dnapair": DnaPairProcessor,
     "dnasplice": DnaSpliceProcessor,
+    "genome-classification":DnaPromProcessor,
 }
 
 glue_output_modes = {
@@ -641,4 +645,5 @@ glue_output_modes = {
     "dna690": "classification",
     "dnapair": "classification",
     "dnasplice": "classification",
+    "genome-classification": "classification",
 }
