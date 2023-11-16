@@ -170,8 +170,13 @@ class DnaPromProcessor(DataProcessor):
     """Processor for the DNA promoter data"""
     """Modified for multi-class classification"""
     def get_labels(self):
-        return list(range(26))
-        """[0, 1, 2... 25] for each different class"""
+        return
+            ['genome1', 'genome2', 'genome3', 'genome4', 'genome5', 'genome6,'
+            'genome7', 'genome8', 'genome9', 'genome10', 'genome11', 'genome12',
+            'genome13', 'genome14', 'genome15', 'genome16', 'genome17', 'genome18',
+            'genome19', 'genome20', 'genome21', 'genome22', 'genome23', 'genome24', 'genome25']
+
+        """[genome0, genome1, genome2... genome25] for each different class"""
 
 
     def get_train_examples(self, data_dir):
