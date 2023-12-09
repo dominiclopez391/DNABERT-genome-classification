@@ -170,8 +170,7 @@ class DnaPromProcessor(DataProcessor):
     """Processor for the DNA promoter data"""
     """Modified for multi-class classification"""
     def get_labels(self):
-        return
-            ['genome1', 'genome2', 'genome3', 'genome4', 'genome5', 'genome6,'
+        return ['genome1', 'genome2', 'genome3', 'genome4', 'genome5', 'genome6',
             'genome7', 'genome8', 'genome9', 'genome10', 'genome11', 'genome12',
             'genome13', 'genome14', 'genome15', 'genome16', 'genome17', 'genome18',
             'genome19', 'genome20', 'genome21', 'genome22', 'genome23', 'genome24', 
@@ -615,7 +614,7 @@ glue_tasks_num_labels = {
     "dna690":2,
     "dnapair":2,
     "dnasplice":3,
-    "genome-classification":26,
+    "dna-genome-classification":26,
 }
 
 glue_processors = {
@@ -633,7 +632,7 @@ glue_processors = {
     "dna690": DnaPromProcessor,
     "dnapair": DnaPairProcessor,
     "dnasplice": DnaSpliceProcessor,
-    "genome-classification":DnaPromProcessor,
+    "dna-genome-classification":DnaPromProcessor,
 }
 
 glue_output_modes = {
@@ -651,5 +650,5 @@ glue_output_modes = {
     "dna690": "classification",
     "dnapair": "classification",
     "dnasplice": "classification",
-    "genome-classification": "classification",
+    "dna-genome-classification": "classification",
 }
